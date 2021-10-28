@@ -127,7 +127,7 @@ public class ArrayList<E> extends AbstractList<E>
 //那么频繁的插入会导致频繁的拷贝，降低性能，而ArrayList的扩容机制避免了这种情况。
     /**
      * 如有必要，增加此ArrayList实例的容量，以确保它至少能容纳元素的数量
-     * @param   minCapacity   所需的最小容量
+     * @param   minCapacity   所需的最小容量（扩容参数，如果参数大于低层数组长度的1.5倍，那么这个数组的容量就会被扩容到这个参数值，如果参数小于低层数组长度的1.5倍，那么这个容量就会被扩容到低层数组长度的1.5倍。）
      */
     public void ensureCapacity(int minCapacity) {
         //如果是true，minExpand的值为0，如果是false,minExpand的值为10
@@ -139,6 +139,7 @@ public class ArrayList<E> extends AbstractList<E>
             : DEFAULT_CAPACITY;
         //如果最小容量大于已有的最大容量
         if (minCapacity > minExpand) {
+            //判断是否需要扩容
             ensureExplicitCapacity(minCapacity);
         }
     }
@@ -932,3 +933,7 @@ public class EnsureCapacityTest {
 ```
 
 通过运行结果，我们可以看出向 ArrayList 添加大量元素之前最好先使用`ensureCapacity` 方法，以减少增量重新分配的次数。
+
+思考
+
+1. 为什么扩展1.5倍，不是2倍。[参考](https://www.cnblogs.com/fortunely/p/14279231.html)
