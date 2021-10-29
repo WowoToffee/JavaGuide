@@ -292,7 +292,7 @@ public int lastIndexOf(Object o) {
 ```
 ### <font face="楷体" id="3.6">删除方法</font>
 **remove()** ,**removeFirst(),pop():** 删除头节点
-```
+```java
 public E pop() {
         return removeFirst();
     }

@@ -434,7 +434,7 @@ final Node<K,V>[] resize() {
     else if (oldThr > 0) // initial capacity was placed in threshold
         newCap = oldThr;
     else {
-        // signifies using defaults
+        // signifies using defaults(初始化情况)
         newCap = DEFAULT_INITIAL_CAPACITY;
         newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
     }

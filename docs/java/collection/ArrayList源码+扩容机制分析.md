@@ -937,3 +937,8 @@ public class EnsureCapacityTest {
 思考
 
 1. 为什么扩展1.5倍，不是2倍。[参考](https://www.cnblogs.com/fortunely/p/14279231.html)
+
+2. 为什么创建ArryList 默认是0，新增之后为什么是10，不是8？不是20？
+
+   
+
