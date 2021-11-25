@@ -8,6 +8,9 @@
 
 对于`ThreadLocal`，大家的第一反应可能是很简单呀，线程的变量副本，每个线程隔离。那这里有几个问题大家可以思考一下：
 
+- `ThreadLocal`的 key 为什么使用弱引用？
+- `ThreadLocal`的 value为什么不使用弱引用？
+
 - `ThreadLocal`的 key 是**弱引用**，那么在 `ThreadLocal.get()`的时候，发生**GC**之后，key 是否为**null**？
 - `ThreadLocal`中`ThreadLocalMap`的**数据结构**？
 - `ThreadLocalMap`的**Hash 算法**？
