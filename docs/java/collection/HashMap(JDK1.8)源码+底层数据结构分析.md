@@ -18,6 +18,31 @@
 
 > 感谢 [changfubai](https://github.com/changfubai) 对本文的改进做出的贡献！
 
+## 问题：
+
+1. table 的初始化时机是什么时候，初始化的 table.length 是多少、阀值（threshold）是多少，实际能容下多少元素
+2. 什么时候触发扩容，扩容之后的 table.length、阀值各是多少？
+3. table 的 length 为什么是 2 的 n 次幂
+4. 求索引的时候为什么是：h&(length-1)，而不是 h&length，更不是 h%length
+5. 为什么不直接用 2^n-1 作为 table.length
+6. 为什么为什么要先高16位异或低16位再取模运算? 
+7. Map map = new HashMap(1000); 当我们存入多少个元素时会触发map的扩容； Map map1 = new HashMap(10000); 我们存入第 10001个元素时会触发 map1 扩容吗
+8. 为什么加载因子的默认值是 0.75，并且不推荐我们修改
+9. 说说String中hashcode的实现?(此题频率很高) 
+10. 为什么hashmap的在链表元素数量超过8时改为红黑树?
+11. 我不用红黑树，用二叉查找树可以么? 
+12. HashMap的并发问题? 你一般用什么作为HashMap的key?
+13. 我用可变类当HashMap的key有什么问题? 
+14. 如果让你实现一个自定义的class作为HashMap的key该如何实现？
+
+
+
+参考：	
+
+[HashMap 中的容量与扩容实现，细致入微，值的一品](https://zhuanlan.zhihu.com/p/92481037)
+
+[**阿里三面**](https://www.bilibili.com/read/cv11252491)
+
 ## HashMap 简介
 
 HashMap 主要用来存放键值对，它基于哈希表的 Map 接口实现，是常用的 Java 集合之一，是非线程安全的。
